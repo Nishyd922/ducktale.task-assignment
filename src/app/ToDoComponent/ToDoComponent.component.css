@@ -1,0 +1,28 @@
+.form-horizontal {
+background-color: #dcdedbfb!important;
+border-radius: 7%;
+margin-top: 5%;
+margin-left: 5%;
+}
+.panel {
+  background-color: #cac8c8;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  margin-bottom: 10px;
+}
+.form-group input {
+  margin-top: 10px;
+}
+.select {
+  display: flex;
+}
+.help-block {
+  position: absolute;
+    display: block;
+}
+.droppad {
+  padding: 0px 20px;
+}

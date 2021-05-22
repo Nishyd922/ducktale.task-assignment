@@ -1,0 +1,19 @@
+<h2>DoneList Component</h2>
+<div  class="table">
+  <table border='4' id="show">
+    <tr>
+      <th>UnDone</th>
+      <th>S. No.</th>
+      <th>Name</th>
+      <th>Discription</th>
+      <th>Repeating</th>
+    </tr>
+    <tr *ngFor="let item of doneList; let i = index">
+      <td><input type="checkbox" name="{{i}}" id="{{i}}" (click)="unSelect(item,i)"/></td>
+      <td>{{i}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.discription}}</td>
+      <td>{{item.dropdown}}</td>
+    </tr>
+  </table>
+</div>

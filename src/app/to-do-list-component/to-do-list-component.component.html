@@ -1,0 +1,26 @@
+<div class="row mt-5">
+  <div class="col-6">
+    <h2>ToDoList Component</h2>
+<div  class="table">
+  <table border='4' id="show">
+    <tr>
+      <th>Done</th>
+      <th>S. No.</th>
+      <th>Name</th>
+      <th>Discription</th>
+      <th>Repeating</th>
+    </tr>
+    <tr *ngFor="let item of empData; let i = index">
+      <td><input type="checkbox" name="{{i}}" (click)="dataDone(item,i)"/></td>
+      <td>{{i}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.discription}}</td>
+      <td>{{item.dropdown}}</td>
+    </tr>
+  </table>
+</div>
+</div>
+<div class="col-6">
+<app-done-list-component [doneList]="empDoneArr" (removedItem)="removeObj($event)"></app-done-list-component>
+</div>
+</div>

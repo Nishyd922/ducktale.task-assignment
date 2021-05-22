@@ -1,26 +1,25 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateToDoComponentComponent } from './create-to-do-component/create-to-do-component.component';
-import { TodolistcomponentComponent } from './create-to-do-component/todolistcomponent/todolistcomponent.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToDoComponentComponent } from './ToDoComponent/ToDoComponent.component';
+import { ToDoListComponentComponent } from './to-do-list-component/to-do-list-component.component';
+import { DoneListComponentComponent } from './done-list-component/done-list-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateToDoComponentComponent,
-    TodolistcomponentComponent
-  ],
+      ToDoComponentComponent,
+      ToDoListComponentComponent,
+      DoneListComponentComponent
+   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4 mt-5">
+      <h2 class="ml-5">ToDo Component</h2>
+<form [formGroup]="employeeForm" #myEmpForm  class="form-horizontal" (ngSubmit)="autoSubmit()" >
+  <div class="panel pane-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Create Employee</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group" [ngClass]="{'is-invalid' : employeeForm.get('name').errors && (employeeForm.get('name').touched || employeeForm.get('name').dirty)}">
+        <label class="col-sm-2 control-label" for="name">Name</label>
+        <div class="col-sm-8">
+          <input type="text" id="name" formControlName="name" class="form-control" (input)="ValueDetectChange($event)">
+          <span class="help-block" *ngIf="employeeForm.get('name').errors && (employeeForm.get('name').touched || employeeForm.get('name').dirty)">
+            <span *ngIf="employeeForm.get('name').errors.required">Name is required</span>
+            <span *ngIf="employeeForm.get('name').errors.minlength || employeeForm.get('name').errors.maxlength">
+              Name must be greater than 3 characters and less than 20 characters</span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group" [ngClass]="{'is-invalid' : employeeForm.get('discription').errors && (employeeForm.get('discription').touched || employeeForm.get('discription').dirty)}">
+        <label class="col-sm-2 control-label" for="discription">Descriptions</label>
+        <div class="col-sm-8">
+          <!-- <input type="textarea" id="discription" formControlName="discription" class="form-control" (input)="ValueDetectChange($event)"> -->
+    <textarea class="form-control" id="discription" formControlName="discription" (input)="ValueDetectChange($event)"></textarea>
+
+          <span class="help-block" *ngIf="employeeForm.get('discription').errors && (employeeForm.get('discription').touched || employeeForm.get('discription').dirty)">
+            <span *ngIf="employeeForm.get('discription').errors.required">Discription is required</span>
+            <span *ngIf="employeeForm.get('discription').errors.minlength || employeeForm.get('discription').errors.maxlength">
+              Description must be greater than 5 characters and less than 50 characters</span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group" [ngClass]="{'is-invalid' : employeeForm.get('dropdown').errors && (employeeForm.get('dropdown').touched || employeeForm.get('dropdown').dirty)}">
+        <label class="col-sm-2 control-label" for="dropdown">Repeating Task</label>
+        <div class="col-sm-8">
+          <select name="select" class="form-control droppad"  formControlName="dropdown"  (input)="ValueDetectChange($event)">
+          <option class="form-control">Yes</option>
+          <option class="form-control">No</option>
+          </select>
+          <span class="help-block" *ngIf="employeeForm.get('dropdown').errors && (employeeForm.get('dropdown').touched || employeeForm.get('dropdown').dirty)">
+            <span *ngIf="employeeForm.get('dropdown').errors.required">Repeating is required</span>
+          </span>
+        </div>
+      </div>
+      <input type="submit" [disabled]="!employeeForm.valid" name="submit"/>
+    </div>
+  </div>
+</form>
+</div>
+<div class="col-8">
+<app-to-do-list-component [empData]="empDataArr"></app-to-do-list-component>
+</div>
+</div>
+</div>
